@@ -1,0 +1,30 @@
+<h1>Favorites: </h1>
+<br />
+<div *ngIf="countFavs == 0">
+  <h3>You do not have any favorites yet!</h3>
+</div>
+
+<div *ngFor="let f of DisplayFavs">
+  <div class="shadow p-3 mb-1 bg-white rounded mt-4 d-flex">
+    <button title="Remove from favorites"
+            (click)="deleteFavorite(f.id)"
+            class="btn btn-link btn-floating m-1 text-dark text-decoration-none"
+            data-mbd-ripple-color="dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+              <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+            </svg>
+    </button>
+    <div class="p-2">
+      <h1 class="display-4">{{f.name}}</h1>
+    </div>
+    <div class="ml-auto p-2">
+      <button class="btn btn-dark" style="width: 250px" routerLink="/event/{{ f.id }}">View event details</button>
+    </div>
+  </div>
+</div>
+<br />
+<button class="btn btn-block btn-outline-dark font-weight-bold" routerLink="/events">
+  <h5>Return to all events</h5>
+</button>
+
+

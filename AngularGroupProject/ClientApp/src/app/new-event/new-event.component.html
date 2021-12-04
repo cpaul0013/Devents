@@ -1,0 +1,24 @@
+<div class="shadow-lg p-3 mb-5 bg-white rounded mx-auto mt-4" style="width: 700px;" id="added">
+  <h4 class="text-center">Add a new event: </h4>
+  <br />
+  <form #addForm="ngForm" (ngSubmit)="addEvent(addForm)">
+    <label for="name">Event Name: </label>
+    <input class="ml-3 my-2" size="65" type="text" name="name" id="name" ngModel /><br />
+
+    <label for="location">Event Location: </label>
+    <input class="ml-3 my-2" size="63" type="text" name="location" id="location" ngModel /><br />
+
+    <label for="date">Event Date: </label>
+    <input class="ml-3 my-2" size="67" type="datetime-local" name="date" id="date" ngModel /> <br />
+
+    <p class="my-2">Description: </p>
+    <textarea rows="5" cols="80" class="ml-3" type="text" name="description" id="description" ngModel></textarea><br />
+
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-dark mt-4 btn-block">Add Event</button>
+    </div>
+  </form>
+</div>
+<button class="btn btn-block btn-outline-dark font-weight-bold" routerLink="/events">
+  <h5>Return to all events</h5>
+</button>
